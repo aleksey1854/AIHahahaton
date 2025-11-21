@@ -235,7 +235,7 @@ body {
   padding: 16px;
   background: var(--surface);
   border-radius: 8px;
-  text-align: left;
+  text-align: center;
 }
 
 .file-info p {
@@ -876,4 +876,59 @@ body {
   .filter-select {
     width: 100%;
   }
+}
+
+/* ============ MODAL ============ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--background);
+  border-radius: 10px;
+  padding: 20px;
+  width: min(900px, 95%);
+  max-height: 80vh;
+  overflow: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.modal-text {
+  background: var(--surface);
+  padding: 12px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+
+.modal-actions button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background: var(--primary-gradient);
+  color: white;
 }

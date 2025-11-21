@@ -12,7 +12,12 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    # Разрешаем localhost и 127.0.0.1 на любых портах (удобно для разработки).
+    # Используем allow_origin_regex, чтобы покрыть как "localhost" так и "127.0.0.1"
+    # и любые порты (например 5173, 3000 и т.д.). Это безопасно для локальной разработки
+    # — в проде указывайте точные домены.
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origin_regex=r"http://(localhost|127\.0\.0\.1)(:\d+)?",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
