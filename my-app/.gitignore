@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Игнорировать скомпилированные Python-файлы
+*.pyc
+# или
+Whisper/pycache/
